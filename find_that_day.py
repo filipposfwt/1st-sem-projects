@@ -1,22 +1,12 @@
-
-
-
-print("  ________ __                __        ________ __                  __                  __                   ")
-print(" /        /  |              /  |      /        /  |                /  |                /  |                  ")
-print(" $$$$$$$$/$$/ _______   ____$$ |      $$$$$$$$/$$ |____   ______  _$$ |_           ____$$ | ______  __    __ ")
-print(" $$ |__   /  /       \ /    $$ |         $$ |  $$      \ /      \/ $$   |         /    $$ |/      \/  |  /  |")
-print(" $$    |  $$ $$$$$$$  /$$$$$$$ |         $$ |  $$$$$$$  |$$$$$$  $$$$$$/         /$$$$$$$ |$$$$$$  $$ |  $$ |")
-print(" $$$$$/   $$ $$ |  $$ $$ |  $$ |         $$ |  $$ |  $$ |/    $$ | $$ | __       $$ |  $$ |/    $$ $$ |  $$ |")
-print(" $$ |     $$ $$ |  $$ $$ \__$$ |         $$ |  $$ |  $$ /$$$$$$$ | $$ |/  |      $$ \__$$ /$$$$$$$ $$ \__$$ |")
-print(" $$ |     $$ $$ |  $$ $$    $$ |         $$ |  $$ |  $$ $$    $$ | $$  $$/       $$    $$ $$    $$ $$    $$ |")
-print(" $$/      $$/$$/   $$/ $$$$$$$/          $$/   $$/   $$/ $$$$$$$/   $$$$/         $$$$$$$/ $$$$$$$/ $$$$$$$ |")
-print("                                                                                                   /  \__$$ |")
-print("                                                                                                   $$    $$/ ")
-print("                                                                                                    $$$$$$/  ")
-
-
-
-#vivliothiki gia thn sunarthsh math.floor pou xreiazetai ston typo tou Gauss
+print(" ______ _           _   _______ _           _         _")
+print(" |  ____(_)         | | |__   __| |         | |       | |")
+print(" | |__   _ _ __   __| |    | |  | |__   __ _| |_    __| | __ _ _   _")
+print(" |  __| | | '_ \ / _` |    | |  | '_ \ / _` | __|  / _` |/ _` | | | |")
+print(" | |    | | | | | (_| |    | |  | | | | (_| | |_  | (_| | (_| | |_| |")
+print(" |_|    |_|_| |_|\__,_|    |_|  |_| |_|\__,_|\__|  \__,_|\__,_|\__, |")
+print("                                                                __/ |")
+print("                                                               |___/ ")
+#Math library that is needed in the Gauss formula
 import math
 
 print ("Give date in the form of dd/mm/yyyy(ex.12/2/2008)")
@@ -29,7 +19,7 @@ month=int(date[1])
 year=int(date[2])
 error=0
 
-#elegxos egkurothtas hmeromhnias
+#Checking date's validity
 if (day<1 or month<1):
     print("Seriously now? Please enter positive data.")
     error=1
@@ -55,34 +45,33 @@ elif(month==4 or month==6 or month==9 or month==11):
         print("There are 30 days in this month you fool!")
         error=1
 
-#tropopoihsh metavlhtwn vasei ths thewrias tou Gauss
+#Adjusting variables according to Gauss theory
 if (month==1):
-    month=1
+    month=11
     y=(year%100)-1
 elif (month==2):
     month=12
     y=(year%100)-1
-
 else:
     month=month-2
     y=year%100
 c=(year//100)
 d=day
 
-#typos tou Gauss
+#Gauss formula
 w=(d+math.floor(2.6*month-0.2)+y+math.floor(y/4)+math.floor(c/4)-2*c)%7
-
-if  (w==0 and error==0):
-    print("Sunday")
-elif(w==1 and error==0):
-    print("Monday")
-elif(w==2 and error==0):
-    print("Tuesday")
-elif(w==3 and error==0):
-    print("Wednesday")
-elif(w==4 and error==0):
-    print("Thursday")
-elif(w==5 and error==0):
-    print("Friday")
-elif(w==6 and error==0):
-    print("Saturday")
+if (error==0):
+    if  (w==0):
+        print("Sunday")
+    elif(w==1):
+        print("Monday")
+    elif(w==2):
+        print("Tuesday")
+    elif(w==3):
+        print("Wednesday")
+    elif(w==4):
+        print("Thursday")
+    elif(w==5):
+        print("Friday")
+    elif(w==6):
+        print("Saturday")
