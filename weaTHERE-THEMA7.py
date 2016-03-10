@@ -1,12 +1,5 @@
 import urllib2
 import json
-
-print ("Coordinates of some big cities.")
-print ("Athens,GR:(23.72,37.98)")
-print ("London,GB:(0.1275,51.5072)")
-print ("Amsterdam,NL:(4.89,52.37)")
-print ("")
-
 #api key
 locu_api = '07e71a4d1fc5d0fb773e4bbf5780e4d1'
 print ("Please give the coords of the area you want:")
